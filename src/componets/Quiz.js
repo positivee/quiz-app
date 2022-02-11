@@ -18,7 +18,7 @@ function Quiz(props) {
         console.log(result.results);
         setQuizData(setUpQuiz(result.results));
       });
-  }, []);
+  }, [quizSetup]);
 
   function setUpQuiz(result) {
     return result.map((elemenet) => {
