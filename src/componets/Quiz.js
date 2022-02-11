@@ -4,13 +4,14 @@ import { nanoid } from "nanoid";
 import arrayShuffle from "array-shuffle";
 
 function Quiz(props) {
+  const { resetQuiz, quizSetup } = props;
   const [quizData, setQuizData] = useState([]);
   const [score, setScore] = useState(0);
   const [isGameEnded, setGameEnded] = useState(false);
 
   useEffect(() => {
     fetch(
-      "https://opentdb.com/api.php?amount=5&category=18&difficulty=easy&type=multiple"
+      `https://opentdb.com/api.php?amount=${quizSetup.numberOfQuestion}&category=${quizSetup.category}&difficulty=${quizSetup.difficulty}&type=multiple`
     )
       .then((res) => res.json())
       .then((result) => {
@@ -72,8 +73,10 @@ function Quiz(props) {
       <div className="button-section">
         {isGameEnded ? (
           <>
-            <div className="score">You scored {score}/5 correct answers</div>
-            <button className="quiz-button play-agin" onClick={props.resetQuiz}>
+            <div className="score">
+              You scored {score}/{quizSetup.numberOfQuestion} correct answers
+            </div>
+            <button className="quiz-button play-agin" onClick={resetQuiz}>
               Play agin
             </button>
           </>
