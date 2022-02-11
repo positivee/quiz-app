@@ -11,7 +11,7 @@ function Quiz(props) {
 
   useEffect(() => {
     fetch(
-      `https://opentdb.com/api.php?amount=${quizSetup.numberOfQuestion}&category=${quizSetup.category}&difficulty=${quizSetup.difficulty}&type=multiple`
+      `https://opentdb.com/api.php?amount=5&category=${quizSetup.category}&difficulty=${quizSetup.difficulty}&type=multiple`
     )
       .then((res) => res.json())
       .then((result) => {
@@ -73,9 +73,7 @@ function Quiz(props) {
       <div className="button-section">
         {isGameEnded ? (
           <>
-            <div className="score">
-              You scored {score}/{quizSetup.numberOfQuestion} correct answers
-            </div>
+            <div className="score">You scored {score}/5 correct answers</div>
             <button className="quiz-button play-agin" onClick={resetQuiz}>
               Play agin
             </button>

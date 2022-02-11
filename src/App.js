@@ -4,7 +4,6 @@ import Quiz from "./componets/Quiz.js";
 function App() {
   const [quizStart, setQuizStart] = useState(false);
   const [quizParametersFormData, setQuizParametersFormData] = useState({
-    numberOfQuestion: "5",
     category: "18",
     difficulty: "easy",
   });
@@ -27,7 +26,6 @@ function App() {
   function resetQuiz() {
     startTheGame(false);
     setQuizParametersFormData({
-      numberOfQuestion: "5",
       category: "18",
       difficulty: "easy",
     });
@@ -40,19 +38,6 @@ function App() {
           <h1 className="app-name">Quizzical</h1>
           <p className="app-description">Some description if needed</p>
           <form className="quiz-setup-form">
-            <label htmlFor="numberOfQuestion">Select Difficulty:</label>
-
-            <input
-              type="number"
-              placeholder="Number of questions (max 20)"
-              min="5"
-              max="20"
-              id="numberOfQuestion"
-              value={quizParametersFormData.numberOfQuestion}
-              onChange={handleFormChanges}
-              name="numberOfQuestion"
-            />
-
             <label htmlFor="category">Select Category:</label>
 
             <select
