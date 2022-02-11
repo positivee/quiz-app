@@ -1,13 +1,118 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: Inter;
+  font-style: normal;
+  background: #f5f7fb;
+  background: url("./images/blob-right.png") no-repeat fixed right top,
+    url("./images/blobs.png") no-repeat fixed left bottom;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.App {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Quiz {
+  margin-top: 1%;
+  max-width: 700px;
+}
+.welcome-main {
+  padding: 15%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}
+
+.app-name {
+  font-family: Karla;
+  font-style: normal;
+  color: #293264;
+  text-align: center;
+  margin: 0;
+}
+.app-description {
+  color: #293264;
+  margin-bottom: 2.5rem;
+  font-size: 1.2rem;
+}
+.quiz-button {
+  color: #f5f7fb;
+  border: none;
+  background: #4d5b9e;
+  border-radius: 1.2rem;
+  padding: 1.2rem 3rem;
+  font-family: Inter;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.question {
+  font-family: Karla;
+
+  color: #293264;
+  font-size: 1.3rem;
+}
+.separating-line {
+  margin: 15px 0px;
+  border: 0.6px solid #dbdef0;
+}
+.all-answers {
+  display: flex;
+}
+.answer {
+  font-weight: 500;
+  align-items: center;
+  font-size: 0.9rem;
+  margin: 5px;
+  padding: 5px 15px;
+  border: 1px solid #4d5b9e;
+  border-radius: 8px;
+  color: #293264;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.button-section {
+  display: flex;
+  margin-top: 1rem;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+}
+
+.score {
+  color: #293264;
+  font-weight: bold;
+  font-size: 1.4rem;
+  margin-right: auto;
+}
+.answer-selected {
+  background: #d6dbf5;
+  color: #293264;
+  border: none;
+}
+.gray-answer {
+  color: #293264;
+  border: 1px solid rgba(77, 91, 158, 0.5);
+  color: rgba(77, 91, 158, 0.5);
+}
+
+.correct-answer {
+  background: #94d7a2;
+  border: none;
+  color: #293264;
+}
+.incorrect-answer {
+  background: #f8bcbc;
+  border: none;
 }
